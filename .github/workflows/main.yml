@@ -3,7 +3,7 @@ name: Build Android APK
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -21,18 +21,19 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 17
+          java-version: '17'
 
-      - name: Setup Gradle
+      - name: Setup Gradle 8.9
         uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
 
       - name: Build APK
-        run: |
-          chmod +x gradlew
-          ./gradlew assembleDebug
+        working-directory: "SecretCalculator-AndroidStudio (1)/SecretCalculator-AndroidStudio"
+        run: gradle assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: SecretCalculator-APK
-          path: "**/build/outputs/apk/debug/*.apk"
+          path: "SecretCalculator-AndroidStudio (1)/SecretCalculator-AndroidStudio/app/build/outputs/apk/debug/*.apk"
