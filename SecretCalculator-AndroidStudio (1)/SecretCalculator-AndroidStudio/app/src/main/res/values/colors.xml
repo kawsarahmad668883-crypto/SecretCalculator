@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="obsidian_bg">#000000</color>
+    <color name="amber_accent">#FF9F0A</color>
+    <color name="surface_dark">#141416</color>
+</resources>

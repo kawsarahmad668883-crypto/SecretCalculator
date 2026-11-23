@@ -1,0 +1,5 @@
+<resources>
+    <!-- Disguised launcher label appears as Calculator on home screen -->
+    <string name="app_name">Calculator</string>
+    <string name="vault_title">Private Vault</string>
+</resources>
